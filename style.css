@@ -1,0 +1,135 @@
+*{
+  font-family: sans-serif;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  display: inline-grid;
+  grid-template: 20vh 80vh / 20vw 80vw;
+}
+
+/*====================================================*/
+
+#header{
+  background-color: white;
+  grid-column: 2;
+  grid-row: 1;
+  padding: 2vh 3vw;
+
+  display: inline-grid;
+  grid-template: 30fr 70fr / 30fr 70fr;
+}
+
+#search{
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 500px;
+}
+
+.searchbar{
+  border-radius: 30px;
+  border: 0;
+  background-color: lightgrey;
+  width: 500px;
+  height: 30px;
+  margin: 0 10px;
+  padding: 0 10px;
+}
+
+.searchbar:focus{
+  outline: 0
+}
+
+#menu{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 30px;
+}
+
+#menu > *{
+  padding:20px;
+}
+
+#menu > .profile-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+#profile{
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: auto auto;
+  height: 80px;
+  align-content: center;
+  padding-top: 10px;
+}
+
+#profile > .profile-icon{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  object-fit: cover;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+#profile > .greeting{
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  padding-left: 10px;
+  font-size: 12px;
+  align-self: end;
+}
+
+#profile > .name{
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  padding-left: 10px;
+  align-self: start;
+}
+
+#buttons {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  padding-bottom: 30px;
+}
+
+#buttons > button{
+  background-color: rgb(20, 160, 220);
+  border: 0;
+  border-radius: 50px;
+  width: 90px;
+  height: 30px;
+  margin-left: 15px;
+  color: white;
+}
+/*====================================================*/
+
+#sidebar{
+  background-color: rgb(20, 160, 220);
+  grid-column: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+/*====================================================*/
+
+#main-content{
+  background-color: lightgrey;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
