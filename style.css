@@ -200,9 +200,14 @@ body{
   font-weight: 100;
 }
 
-#announcement, #trend{
+#announcement{
   margin: 0 20px;
   padding: 15px 0 15px 0 ;
+}
+
+#trend{
+  margin: 0 20px;
+  padding: 15px 0 0 0 ;
 }
 
 #announcement:hover, #trend:hover{
@@ -234,4 +239,29 @@ body{
   border-radius: 5px;
   margin-bottom: 30px;
   box-shadow: 0 3px 5px rgb(70, 70, 70, .2);
+}
+
+
+#trend{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+#trend > .profile-icon{
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+#nameProject > .name{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#nameProject > .project{
+  font-size: 12px;
+  font-weight: 100;
+  color: grey;
 }
