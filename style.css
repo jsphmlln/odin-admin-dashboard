@@ -3,25 +3,64 @@
   font-weight: 600;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body{
   margin: 0;
   padding: 0;
-  display: inline-grid;
-  grid-template: 20vh 80vh / 20vw 80vw;
+  display: grid;
+  grid-template-columns:20vw 80vw;
+}
+
+/*====================================================*/
+
+#sidebar{
+  background-color: rgb(2, 140, 204);
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav, .dashboard-name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px 20px;
+  gap: 20px;
+  color: white;
+}
+
+.nav:hover{
+  scale: 110%;
+  margin: 15px 30px;
+}
+
+.dashboard-name{
+  font-size: 24px;
+}
+
+/*====================================================*/
+
+#headerMain{
+  display: grid;
+  grid-column: 2;
+  grid-template-rows: 20vh 80vh;
+  overflow: hidden;
 }
 
 /*====================================================*/
 
 #header{
   background-color: white;
-  grid-column: 2;
   grid-row: 1;
-  padding: 2vh 3vw;
+  padding: 2vh 3vw 0 3vw;
 
-  display: inline-grid;
-  grid-template: 30fr 70fr / 30fr 70fr;
+  display: grid;
+  grid-template: 30% 70% / 70% 30%;
+  position: relative;
+  box-shadow: 0 3px 5px rgb(70, 70, 70, .2);
 }
 
 #search{
@@ -34,7 +73,7 @@ body{
 .searchbar{
   border-radius: 30px;
   border: 0;
-  background-color: lightgrey;
+  background-color: rgb(233, 235, 236);
   width: 500px;
   height: 30px;
   margin: 0 10px;
@@ -53,7 +92,7 @@ body{
 }
 
 #menu > *{
-  padding:20px;
+  margin-left:20px;
 }
 
 #menu > .profile-icon{
@@ -68,8 +107,9 @@ body{
   grid-template-columns: 60px 1fr;
   grid-template-rows: auto auto;
   height: 80px;
-  align-content: center;
-  padding-top: 10px;
+  align-items: center;
+  justify-content: start;
+  margin-top: 5px;
 }
 
 #profile > .profile-icon{
@@ -86,7 +126,7 @@ body{
   grid-column: 2;
   grid-row: 1;
   align-self: center;
-  padding-left: 10px;
+  margin-left: 10px;
   font-size: 12px;
   align-self: end;
 }
@@ -95,19 +135,22 @@ body{
   grid-column: 2;
   grid-row: 2;
   align-self: center;
-  padding-left: 10px;
+  margin-left: 10px;
   align-self: start;
 }
 
-#buttons {
+#buttons{
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: end;
-  padding-bottom: 30px;
+}
+
+#buttons > button:hover{
+  scale: 108%;
 }
 
 #buttons > button{
-  background-color: rgb(20, 160, 220);
+  background-color: rgb(2, 140, 204);
   border: 0;
   border-radius: 50px;
   width: 90px;
@@ -115,21 +158,80 @@ body{
   margin-left: 15px;
   color: white;
 }
-/*====================================================*/
-
-#sidebar{
-  background-color: rgb(20, 160, 220);
-  grid-column: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
 
 /*====================================================*/
 
 #main-content{
-  background-color: lightgrey;
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 2;
+  background-color: rgb(233, 235, 236);
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+#projects-view, #announceTrend-view{
+  padding: 25px 20px;
+}
+
+#projects-view > p, #announceTrend-view > p{
+  margin-bottom: 10px;
+}
+
+#projects{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 20px;
+}
+
+#project-container{
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 3px 5px rgb(70, 70, 70, .2);
+  border-left: 5px solid orange;
+}
+
+#project-container > h5, #announcement > h5, #trend > h5{
+  font-size: 12px;
+}
+
+#project-container > p, #announcement > p, #trend > p{
+  font-size: 12px;
+  color: gray;
+  font-weight: 100;
+}
+
+#announcement, #trend{
+  margin: 0 20px;
+  padding: 15px 0 15px 0 ;
+}
+
+#announcement:hover, #trend:hover{
+  scale: 103%;
+}
+
+#announcement:not(:last-child){
+  border-bottom: 1px solid grey;
+}
+
+#project-container:hover{
+  scale: 103%;
+}
+
+#project-container > #actions{
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+  gap: 10px
+}
+
+#announceTrend-view{
+  display: grid;
+  grid-template-rows: 5% 47.5% 5% 47.5%;
+}
+
+#announcements, #trends{
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 5px rgb(70, 70, 70, .2);
 }
